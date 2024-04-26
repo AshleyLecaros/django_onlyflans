@@ -76,6 +76,7 @@
   <!-- Fin de Header -->
 
   <!--- Inicio sección-->
+  {% block 'Welcome' %}
   <section id="Bienvenido" class="container-fluid text-center my-5 bg-light">
     <hr>
     <h1 class="display-3 my-4">Bienvenido</h1>
@@ -103,9 +104,11 @@
     </div>
     <hr>
   </section>
+  {% endblock %}
   <!-- Fin seccion -->
 
   <!--- Inicio sección-->
+  {% block 'Nosotros' %}
   <section id="Nosotros" class="container-fluid text-center bg-light my-5">
     <hr>
     <h2 class="display-3 my-4">Nosotros</h1>
@@ -119,8 +122,11 @@
       </p>
       <hr>
   </section>
+  {% endblock %}
   <!-- Fin seccion -->
-  <!-- cartas -->
+
+  <!-- inicio seccion cartas -->
+  {% block 'contenido' %}
   <section class="container bg-light" id="productos">
     <h2 class=" text-center fw-bold pt-3 pb-4">Nuestros Productos</h2>
     <div class="row">
@@ -212,6 +218,8 @@
           </div>
         </div>
   </section>
+  {% endblock %}
+  <!-- Fin de seccion cartas -->
 
   <!-- inicio footer -->
   {% block 'footer %}
