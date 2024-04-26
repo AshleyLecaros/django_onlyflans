@@ -1,27 +1,230 @@
-<html>
-    <body>
-        {% block 'header' %}
-        <div style="background: red;">
-            header 
-        </div>
-        {% endblock %}
-        
-        {% block 'navbar' %}
-        <div style="background: yellow;">
-            navbar
-        </div>
-        {% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-        {% block 'contenido' %}
-        <div>
-            contenido  
-        </div>
-        {% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/7a81f69f5c.js" crossorigin="anonymous"></script>
+  <title>OnlyFlans</title>
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+</head>
 
-        {% block 'footer %}
-        <div style="background: green;">
-            footer  
+<body>
+  {% block 'navbar' %}
+  <!-- Inicio barra de navegacion -->
+  <nav class="navbar navbar-expand-lg bg-remove fixed-top">
+    <div class="container px-3">
+      <a class="navbar-brand" href="#"><img src="static/img/onlyflans_logo.png" height="55"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#productos">Index</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#Nosotros">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#Bienvenido">Welcome</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endblock %}
+  <!-- termino barra de navegacion -->
+
+  <!-- inicio Header -->
+  {% block 'header' %}
+  <header>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="static/img/postres.carrusel3.jpg" class="d-block carousel-image" alt="...">
         </div>
-        {% endblock %}
-    </body>
+        <div class="carousel-item">
+          <img src="static/img/postres.carrusel4.jpg" class="d-block carousel-image" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/img/postres.carrusel2.jpg" class="d-block carousel-image" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+  {% endblock %}
+  <!-- Fin de Header -->
+
+  <!--- Inicio sección-->
+  <section id="Bienvenido" class="container-fluid text-center my-5 bg-light">
+    <hr>
+    <h1 class="display-3 my-4">Bienvenido</h1>
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+          <form>
+            <div class="form-group text-black fw-bold mb-3">
+              <label class="mb-2">Nombre</label>
+              <input class="form-control">
+            </div>
+
+            <div class="form-group mb-4 text-black fw-bold">
+              <label class="mb-2">Correo electrónico</label>
+              <input class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="col mt-4 mx-3">
+          <p> Al registrarte, accederás a beneficios exclusivos diseñados para ti. Desde ofertas especiales y descuentos
+            personalizados hasta acceso anticipado a nuevos productos, nuestro registro te brinda acceso privilegiado a
+            todo lo que necesitas para mejorar tu experiencia de compra.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </section>
+  <!-- Fin seccion -->
+
+  <!--- Inicio sección-->
+  <section id="Nosotros" class="container-fluid text-center bg-light my-5">
+    <hr>
+    <h2 class="display-3 my-4">Nosotros</h1>
+      <p class="my-4">
+        OnlyFlans es una empresa enfocada en el mundo de la
+        pastelería y los postres, en especial en la venta de flan(de ahí
+        su nombre), nace en 2021 en santiago de chile como una
+        empresa familiar que pretende entregar productos de calidad
+        a su clientela, estando ubicada en providencia, a pasos del
+        metro Parque Bustamante.
+      </p>
+      <hr>
+  </section>
+  <!-- Fin seccion -->
+  <!-- cartas -->
+  <section class="container bg-light" id="productos">
+    <h2 class=" text-center fw-bold pt-3 pb-4">Nuestros Productos</h2>
+    <div class="row">
+      <!-- primera carta -->
+      <div class="col-sm-4 col-12 px-5 mb-4">
+
+        <div class="card">
+          <img src="static/img/brownie.jpg" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Brownie Chocolate</h5>
+            <p class="card-text">
+              Con su textura suave y húmeda por dentro y una capa crujiente por fuera, este brownie es perfecto para
+              disfrutar en cualquier momento del día.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- segunda carta-->
+      <div class="col-sm-4 col-12 px-5 mb-4">
+
+        <div class="card">
+          <img src="static/img/flan.jpg" class="card-img-top img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Flan</h5>
+            <p class="card-text">
+              Elaborado con los ingredientes más frescos y con una receta tradicional que ha sido perfeccionada, nuestro
+              flan es una verdadera obra maestra culinaria.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- tercera carta-->
+      <div class="col-sm-4 col-12 px-5 mb-4">
+
+        <div class="card">
+          <img src="static/img/mousse.jpg" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Mousse de Chocolate</h5>
+            <p class="card-text">
+              Nuestro irresistible mousse de chocolate, es un verdadero manjar para los amantes del cacao! Con una
+              textura suave y cremosa que se deshace en la boca.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row py-sm-5">
+        <!-- cuarta carta-->
+        <div class="col-sm-4 col-12 px-5 mb-4">
+
+          <div class="card">
+            <img src="static/img/piedelimon.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Pie de limon</h5>
+              <p class="card-text">
+                Nuestra receta artesanal combina la acidez fresca de los limones recién exprimidos con una suave y
+                cremosa capa de relleno, todo sobre una base crujiente de galletas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quinta carta-->
+        <div class="col-sm-4 col-12 px-5 mb-4">
+
+          <div class="card">
+            <img src="static/img/cheesecake.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Cheesecake</h5>
+              <p class="card-text">
+                Con una base crujiente de galletas y una suave y cremosa capa de queso crema, cada bocado es una fusión
+                de texturas y sabores que te dejará sin aliento, ¡Sumérgete en el placer!.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sexta carta-->
+        <div class="col-sm-4 col-12 px-5 mb-4">
+
+          <div class="card">
+            <img src="static/img/tiramisu.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Tiramisu</h5>
+              <p class="card-text">
+                ¡Déjate cautivar por la exquisita experiencia del tiramisú! Combina capas de bizcocho empapado en café
+                con una mezcla sedosa de mascarpone y crema, coronado con un toque de cacao en polvo.
+              </p>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- inicio footer -->
+  {% block 'footer %}
+  <footer class="bg-dark text-center text-light p-4">
+    <p class="mb-0">Desarrollado por Ashley Michell, para Desafio Latam.</p>
+  </footer>
+  {% endblock %}
+  <!-- Termino footer -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
