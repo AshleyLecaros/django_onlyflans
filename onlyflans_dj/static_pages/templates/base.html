@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- CSS -->
-  <link rel="stylesheet" href="static/css/styles.css" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/7a81f69f5c.js" crossorigin="anonymous"></script>
   <title>OnlyFlans</title>
@@ -20,11 +21,11 @@
 </head>
 
 <body>
-  {% block 'navbar' %}
   <!-- Inicio barra de navegacion -->
+  {% block 'navbar' %}
   <nav class="navbar navbar-expand-lg bg-remove fixed-top">
     <div class="container px-3">
-      <a class="navbar-brand" href="#"><img src="static/img/onlyflans_logo.png" height="55"></a>
+      <a class="navbar-brand" href="#"><img src="{% static 'img/onlyflans_logo.png' %}" height="55"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,13 +33,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#productos">Index</a>
+            <a class="nav-link active text-white" aria-current="page" href="/">Index</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white" href="#Nosotros">About</a>
+            <a class="nav-link active text-white" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white" href="#Bienvenido">Welcome</a>
+            <a class="nav-link active text-white" href="welcome">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="/contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -77,152 +81,24 @@
 
   <!--- Inicio sección-->
   {% block 'Welcome' %}
-  <section id="Bienvenido" class="container-fluid text-center my-5 bg-light">
-    <hr>
-    <h1 class="display-3 my-4">Bienvenido</h1>
-    <div class="container text-center">
-      <div class="row align-items-start">
-        <div class="col">
-          <form>
-            <div class="form-group text-black fw-bold mb-3">
-              <label class="mb-2">Nombre</label>
-              <input class="form-control">
-            </div>
-
-            <div class="form-group mb-4 text-black fw-bold">
-              <label class="mb-2">Correo electrónico</label>
-              <input class="form-control">
-            </div>
-          </form>
-        </div>
-        <div class="col mt-4 mx-3">
-          <p> Al registrarte, accederás a beneficios exclusivos diseñados para ti. Desde ofertas especiales y descuentos
-            personalizados hasta acceso anticipado a nuevos productos, nuestro registro te brinda acceso privilegiado a
-            todo lo que necesitas para mejorar tu experiencia de compra.</p>
-        </div>
-      </div>
-    </div>
-    <hr>
-  </section>
+  
   {% endblock %}
   <!-- Fin seccion -->
 
   <!--- Inicio sección-->
-  {% block 'Nosotros' %}
-  <section id="Nosotros" class="container-fluid text-center bg-light my-5">
-    <hr>
-    <h2 class="display-3 my-4">Nosotros</h1>
-      <p class="my-4">
-        OnlyFlans es una empresa enfocada en el mundo de la
-        pastelería y los postres, en especial en la venta de flan(de ahí
-        su nombre), nace en 2021 en santiago de chile como una
-        empresa familiar que pretende entregar productos de calidad
-        a su clientela, estando ubicada en providencia, a pasos del
-        metro Parque Bustamante.
-      </p>
-      <hr>
-  </section>
+  {% block 'about' %}
+  
   {% endblock %}
   <!-- Fin seccion -->
 
   <!-- inicio seccion cartas -->
-  {% block 'contenido' %}
-  <section class="container bg-light" id="productos">
-    <h2 class=" text-center fw-bold pt-3 pb-4">Nuestros Productos</h2>
-    <div class="row">
-      <!-- primera carta -->
-      <div class="col-sm-4 col-12 px-5 mb-4">
-
-        <div class="card">
-          <img src="static/img/brownie.jpg" class="card-img-top" alt="" />
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Brownie Chocolate</h5>
-            <p class="card-text">
-              Con su textura suave y húmeda por dentro y una capa crujiente por fuera, este brownie es perfecto para
-              disfrutar en cualquier momento del día.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- segunda carta-->
-      <div class="col-sm-4 col-12 px-5 mb-4">
-
-        <div class="card">
-          <img src="static/img/flan.jpg" class="card-img-top img" alt="" />
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Flan</h5>
-            <p class="card-text">
-              Elaborado con los ingredientes más frescos y con una receta tradicional que ha sido perfeccionada, nuestro
-              flan es una verdadera obra maestra culinaria.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- tercera carta-->
-      <div class="col-sm-4 col-12 px-5 mb-4">
-
-        <div class="card">
-          <img src="static/img/mousse.jpg" class="card-img-top" alt="" />
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Mousse de Chocolate</h5>
-            <p class="card-text">
-              Nuestro irresistible mousse de chocolate, es un verdadero manjar para los amantes del cacao! Con una
-              textura suave y cremosa que se deshace en la boca.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row py-sm-5">
-        <!-- cuarta carta-->
-        <div class="col-sm-4 col-12 px-5 mb-4">
-
-          <div class="card">
-            <img src="static/img/piedelimon.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Pie de limon</h5>
-              <p class="card-text">
-                Nuestra receta artesanal combina la acidez fresca de los limones recién exprimidos con una suave y
-                cremosa capa de relleno, todo sobre una base crujiente de galletas.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quinta carta-->
-        <div class="col-sm-4 col-12 px-5 mb-4">
-
-          <div class="card">
-            <img src="static/img/cheesecake.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Cheesecake</h5>
-              <p class="card-text">
-                Con una base crujiente de galletas y una suave y cremosa capa de queso crema, cada bocado es una fusión
-                de texturas y sabores que te dejará sin aliento, ¡Sumérgete en el placer!.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sexta carta-->
-        <div class="col-sm-4 col-12 px-5 mb-4">
-
-          <div class="card">
-            <img src="static/img/tiramisu.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Tiramisu</h5>
-              <p class="card-text">
-                ¡Déjate cautivar por la exquisita experiencia del tiramisú! Combina capas de bizcocho empapado en café
-                con una mezcla sedosa de mascarpone y crema, coronado con un toque de cacao en polvo.
-              </p>
-            </div>
-          </div>
-        </div>
-  </section>
+  {% block 'index' %}
+  
   {% endblock %}
   <!-- Fin de seccion cartas -->
 
   <!-- inicio footer -->
-  {% block 'footer %}
+  {% block 'footer' %}
   <footer class="bg-dark text-center text-light p-4">
     <p class="mb-0">Desarrollado por Ashley Michell, para Desafio Latam.</p>
   </footer>

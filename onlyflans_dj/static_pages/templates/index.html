@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
-<html>
-    <body>
-        index
-    </body>
-</html>
+
+        <!-- inicio seccion cartas -->
+  {% block 'index' %}
+  <section class="container bg-light" id="productos">
+    <h2 class=" text-center fw-bold pt-3 pb-4">Nuestros Productos</h2>
+    <div class="row">
+      <!-- primera carta -->
+      {% for flan in flanes_pub %}
+      <div class="col-sm-4 col-12 px-5 mb-4">
+        <div class="card">
+          <img src="{{ flan.image_url}}" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{flan.name}}</h5>
+            <p class="card-text">{{flan.description}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endblock %}
+  <!-- Fin de seccion cartas -->
+
