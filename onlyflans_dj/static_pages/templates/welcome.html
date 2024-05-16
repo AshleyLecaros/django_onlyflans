@@ -1,34 +1,17 @@
 {% extends 'base.html' %}
 
+{% block 'bienvenida' %}
+<div class="text-center mt-5">
+  <h1>Bienvenido, {{ nombre_usuario }}</h1>
+    <h3>¡Gracias por iniciar sesión en nuestro sitio!</p>
+      <h4>¡Estos son los postres de la casa hechos especialmente para ti!</h4>
+</div>
+{% endblock %}
     <!--- Inicio sección-->
     {% block 'Welcome' %}
     <section id="Bienvenido" class="container-fluid text-center my-5 bg-light">
+        <br>
         <hr>
-        <h1 class="display-3 my-4">Bienvenido</h1>
-        <div class="container text-center">
-            <div class="row align-items-start">
-                <div class="col">
-                    <form>
-                        <div class="form-group text-black fw-bold mb-3">
-                            <label class="mb-2">Nombre</label>
-                            <input class="form-control">
-                        </div>
-
-                        <div class="form-group mb-4 text-black fw-bold">
-                            <label class="mb-2">Correo electrónico</label>
-                            <input class="form-control">
-                        </div>
-                    </form>
-                </div>
-                <div class="col mt-4 mx-3">
-                    <p> Al registrarte, accederás a beneficios exclusivos diseñados para ti. Desde ofertas especiales y
-                        descuentos
-                        personalizados hasta acceso anticipado a nuevos productos, nuestro registro te brinda acceso
-                        privilegiado a
-                        todo lo que necesitas para mejorar tu experiencia de compra.</p>
-                </div>
-            </div>
-        </div>
 
         <section class="container bg-light">
             <div class="row">

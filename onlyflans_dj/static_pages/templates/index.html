@@ -1,11 +1,39 @@
 {% extends 'base.html' %}
+<!-- inicio Header -->
+{% block 'header' %}
+<header>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static/img/postres.carrusel3.jpg" class="d-block carousel-image" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="static/img/postres.carrusel4.jpg" class="d-block carousel-image" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="static/img/postres.carrusel2.jpg" class="d-block carousel-image" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</header>
+{% endblock %}
+<!-- Fin de Header -->
+
 
         <!-- inicio seccion cartas -->
   {% block 'index' %}
   <section class="container bg-light" id="productos">
     <h2 class=" text-center fw-bold pt-3 pb-4">Nuestros Productos</h2>
     <div class="row">
-      <!-- primera carta -->
+      <!-- cartas -->
       {% for flan in flanes_pub %}
       <div class="col-sm-4 col-12 px-5 mb-4">
         <div class="card">

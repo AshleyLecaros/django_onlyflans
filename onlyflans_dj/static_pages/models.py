@@ -18,3 +18,9 @@ class ContactForm(models.Model):
     message = models.TextField()
         
 
+class Cliente(models.Model):
+    cliente_form_uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    contraseña = models.CharField(max_length=100)
+
